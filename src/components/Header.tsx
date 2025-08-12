@@ -1,47 +1,60 @@
-import { Bell, Search, User } from "lucide-react";
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
 export const Header = () => {
   return (
-    <div>
-     <header className="flex items-center justify-between p-4 bg-gray-800/50 backdrop-blur-sm">
-        <div className="flex items-center gap-2">
-          <div className="text-xl font-bold">
-            haltwar <span className="text-purple-500">✕</span>
-          </div>
+    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-4 lg:px-8 animate-fade-in">
+      <div className="flex items-center">
+        <div className="text-white text-xl font-bold font-sans hover:scale-105 transition-transform duration-300">
+          EventHive
         </div>
+      </div>
 
-        <div className="hidden md:flex flex-1 max-w-md mx-8">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <Input
-              placeholder="Хайх..."
-              className="pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400"
-            />
-          </div>
-        </div>
+      <nav className="hidden md:flex items-center gap-8 text-white text-sm">
+        <a
+          href="#"
+          className="hover:opacity-80 transition-all duration-300 hover:scale-105"
+        >
+          Хайлт хийх
+        </a>
+        <a
+          href="#"
+          className="hover:opacity-80 transition-all duration-300 hover:scale-105"
+        >
+          Эвентийн төрөл
+        </a>
+        <a
+          href="#"
+          className="hover:opacity-80 transition-all duration-300 hover:scale-105"
+        >
+          Нэвтрэх
+        </a>
+        <Button
+          variant="outline"
+          className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 bg-transparent hover:scale-105 hover:shadow-lg"
+        >
+          Бүртгүүлэх
+        </Button>
+      </nav>
 
-        <div className="flex items-center gap-2 md:gap-4">
-          <Button variant="ghost" size="sm" className="text-gray-300 hidden sm:inline-flex">
-            Нэвтрэх & Бүртгүүлэх
-          </Button>
-          <Button variant="ghost" size="sm" className="text-gray-300 hidden md:inline-flex">
-            Эвент зарлах
-          </Button>
-          <Bell className="w-5 h-5 text-gray-400" />
-          <User className="w-5 h-5 text-gray-400" />
-        </div>
-      </header>
-      <div className="md:hidden px-4 py-2 bg-gray-800/30">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <Input
-                  placeholder="Хайх..."
-                  className="pl-10 bg-gray-700/50 border-gray-600 text-white placeholder-gray-400"
-                />
-              </div>
-            </div>
-            </div>
+      {/* Mobile menu button */}
+      <Button
+        variant="ghost"
+        className="md:hidden text-white hover:scale-110 transition-transform duration-300"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </Button>
+    </header>
   );
-}
+};
